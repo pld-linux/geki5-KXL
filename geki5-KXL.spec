@@ -12,6 +12,7 @@ Patch0:		%{name}-scorepath.patch
 # dead, couldn't find working one
 #URL:		http://www2.mwnet.or.jp/~fc3srx7/
 BuildRequires:	KXL-devel >= 1.1.1
+BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 Requires:	KXL >= 1.1.1
