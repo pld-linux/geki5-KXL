@@ -10,7 +10,6 @@ URL:		http://www2.mwnet.or.jp/~fc3srx7/
 BuildRequires:	KXL-devel >= 1.1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 2D length scroll shooting game.
