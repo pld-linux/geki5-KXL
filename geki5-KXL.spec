@@ -7,6 +7,7 @@ License:	GPL
 Group:		X11/Applications/Games
 # note: Source0 URL is dead
 Source0:	http://www2.mwnet.or.jp/~fc3srx7/download/%{name}-%{version}.tar.gz
+# Source0-md5:	714152011a45b1b1a758e3d1092b4f87
 Patch0:		%{name}-scorepath.patch
 # dead, couldn't find working one
 #URL:		http://www2.mwnet.or.jp/~fc3srx7/
