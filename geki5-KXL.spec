@@ -5,29 +5,40 @@ Version:	0.3.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
+# note: Source0 URL is dead
 Source0:	http://www2.mwnet.or.jp/~fc3srx7/download/%{name}-%{version}.tar.gz
-URL:		http://www2.mwnet.or.jp/~fc3srx7/
+Patch0:		%{name}-scorepath.patch
+# dead, couldn't find working one
+#URL:		http://www2.mwnet.or.jp/~fc3srx7/
 BuildRequires:	KXL-devel >= 1.1.1
+BuildRequires:	autoconf
+BuildRequires:	automake
+Requires:	KXL >= 1.1.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 2D length scroll shooting game.
 
 %description -l pl
-Przewijana strzelanina 2D.
+Pionowo przewijana strzelanina 2D.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
+%patch -p1
 
 %build
-./configure --prefix=%{_prefix} --with-x --with-kxl-prefix=%{_libdir}/ \
-    --with-kxl-inc-prefix=%{_includedir}/
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+%configure
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -35,11 +46,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README
-%attr(755,root,root) %{_bindir}/geki5
+%attr(2755,root,games) %{_bindir}/geki5
 %dir %{_datadir}/geki5
 %{_datadir}/geki5/bmp
 %{_datadir}/geki5/wav
 %dir %{_datadir}/geki5/data
 %{_datadir}/geki5/data/*.dat
-#%attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/geki5.score
-#%config(noreplace) %{_datadir}/geki5/data/.score
+%attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/geki5.score
