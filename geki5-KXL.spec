@@ -54,4 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/geki5/wav
 %dir %{_datadir}/geki5/data
 %{_datadir}/geki5/data/*.dat
-%attr(664,root,games) %config(noreplace) %verify(not size mtime md5) /var/games/geki5.score
+%attr(664,root,games) %config(noreplace) %verify(not md5 mtime size) /var/games/geki5.score
