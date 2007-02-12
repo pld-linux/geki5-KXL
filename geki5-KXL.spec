@@ -1,5 +1,5 @@
 Summary:	Geki5, a video-oriented game
-Summary(pl):	Geki5 - gra wideo
+Summary(pl.UTF-8):   Geki5 - gra wideo
 Name:		geki5-KXL
 Version:	0.3.0
 Release:	1
@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 2D length scroll shooting game.
 
-%description -l pl
+%description -l pl.UTF-8
 Pionowo przewijana strzelanina 2D.
 
 %prep
