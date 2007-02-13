@@ -1,5 +1,5 @@
 Summary:	Geki5, a video-oriented game
-Summary(pl.UTF-8):   Geki5 - gra wideo
+Summary(pl.UTF-8):	Geki5 - gra wideo
 Name:		geki5-KXL
 Version:	0.3.0
 Release:	1
